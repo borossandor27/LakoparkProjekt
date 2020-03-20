@@ -30,46 +30,70 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel_Utcakep = new System.Windows.Forms.Panel();
+            this.button_Jobbra = new System.Windows.Forms.Button();
+            this.button_Balra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::LakoparkProjekt.Properties.Resources.Van_Gogh;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(33, 39);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 113);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 170);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
+            // panel_Utcakep
             // 
-            this.panel1.Location = new System.Drawing.Point(204, 39);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 288);
-            this.panel1.TabIndex = 1;
+            this.panel_Utcakep.Location = new System.Drawing.Point(204, 39);
+            this.panel_Utcakep.Name = "panel_Utcakep";
+            this.panel_Utcakep.Size = new System.Drawing.Size(568, 330);
+            this.panel_Utcakep.TabIndex = 1;
             // 
-            // button1
+            // button_Jobbra
             // 
-            this.button1.Location = new System.Drawing.Point(348, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Jobbra.BackColor = System.Drawing.Color.Transparent;
+            this.button_Jobbra.BackgroundImage = global::LakoparkProjekt.Properties.Resources.jobbnyil;
+            this.button_Jobbra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Jobbra.FlatAppearance.BorderSize = 0;
+            this.button_Jobbra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_Jobbra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Jobbra.Location = new System.Drawing.Point(466, 375);
+            this.button_Jobbra.Name = "button_Jobbra";
+            this.button_Jobbra.Size = new System.Drawing.Size(93, 63);
+            this.button_Jobbra.TabIndex = 2;
+            this.button_Jobbra.UseVisualStyleBackColor = false;
+            this.button_Jobbra.Click += new System.EventHandler(this.button_Jobbra_Click);
+            // 
+            // button_Balra
+            // 
+            this.button_Balra.BackColor = System.Drawing.Color.Transparent;
+            this.button_Balra.BackgroundImage = global::LakoparkProjekt.Properties.Resources.balnyil;
+            this.button_Balra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Balra.FlatAppearance.BorderSize = 0;
+            this.button_Balra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_Balra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Balra.Location = new System.Drawing.Point(338, 375);
+            this.button_Balra.Name = "button_Balra";
+            this.button_Balra.Size = new System.Drawing.Size(93, 63);
+            this.button_Balra.TabIndex = 2;
+            this.button_Balra.UseVisualStyleBackColor = false;
+            this.button_Balra.Click += new System.EventHandler(this.button_Balra_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button_Balra);
+            this.Controls.Add(this.button_Jobbra);
+            this.Controls.Add(this.panel_Utcakep);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -79,8 +103,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel_Utcakep;
+        private System.Windows.Forms.Button button_Jobbra;
+        private System.Windows.Forms.Button button_Balra;
     }
 }
 

@@ -28,13 +28,8 @@ namespace LakoparkProjekt
                         int hazakSzama = int.Parse(sor[1]);
                         int[,] hazak = new int[utcakSzama, hazakSzama];
                         string ujSor = string.Empty;
-                        while (true)
+                        while ((ujSor = sr.ReadLine()) != "")
                         {
-                            ujSor = sr.ReadLine();
-                            if (ujSor.Trim().Length < 1)
-                            {
-                                break;
-                            }
                             sor = ujSor.Split(';');
                             hazak[int.Parse(sor[0]) - 1, int.Parse(sor[1]) - 1] = int.Parse(sor[2]);
                         }
