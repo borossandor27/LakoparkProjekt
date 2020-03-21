@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace LakoparkProjekt
 {
@@ -33,7 +34,7 @@ namespace LakoparkProjekt
 
         void PanelUpdate()
         {
-            this.Text = happyLiving.Lakoparkok[aktPark].Nev;
+            this.Text = happyLiving.Lakoparkok[aktPark].Nev + " lakópark";
             if (aktPark==0)
             {
                 button_Balra.Enabled = false;
@@ -59,10 +60,19 @@ namespace LakoparkProjekt
             {
                 for (int j = 0; j < happyLiving.Lakoparkok[aktPark].Hazak.GetLength(0); j++)
                 {
+                    //-- Létrehozás ----------------------------------
                     Button g = new Button();
                     g.BackgroundImage = szintek[happyLiving.Lakoparkok[aktPark].Hazak[j, i]];
                     g.BackgroundImageLayout = ImageLayout.Stretch;
                     g.SetBounds(i * buttonSize, j * buttonSize, buttonSize, buttonSize);
+                    //-- eseménykezelés ------------------------------
+                    int utca = j;
+                    int haz = i;
+                    g.Click += (o, e) =>
+                    {
+                        happyLiving.Lakoparkok[aktPark].UjSzint(utca, haz);
+                        PanelUpdate();
+                    };
                     panel_Utcakep.Controls.Add(g);
                 }
             }
@@ -78,6 +88,18 @@ namespace LakoparkProjekt
         {
             aktPark++;
             PanelUpdate();
+        }
+
+        private void button_Mentes_Click(object sender, EventArgs e)
+        {
+            if (happyLiving.Mentes())
+            {
+                MessageBox.Show("Sikeres Mentés");
+            }
+            else
+            {
+                MessageBox.Show("Adatok mentése nem sikerült!");
+            }
         }
     }
 }

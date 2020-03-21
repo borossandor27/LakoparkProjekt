@@ -33,5 +33,11 @@ namespace LakoparkProjekt
             this.utcakSzama = utcakSzama;
             this.nevado = Image.FromFile(@"Kepek\" + nev + ".jpg");
         }
+
+        public void UjSzint(int utca, int haz)
+        {
+            //hazak[utca, haz] = (hazak[utca, haz] == 3) ? 0 : 9;
+            hazak[utca, haz] = (hazak[utca, haz] == 3) ? 0 : ++hazak[utca, haz];
+        }
     }
 }

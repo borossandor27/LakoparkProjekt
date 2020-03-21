@@ -33,6 +33,7 @@
             this.panel_Utcakep = new System.Windows.Forms.Panel();
             this.button_Jobbra = new System.Windows.Forms.Button();
             this.button_Balra = new System.Windows.Forms.Button();
+            this.button_Mentes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,11 +84,22 @@
             this.button_Balra.UseVisualStyleBackColor = false;
             this.button_Balra.Click += new System.EventHandler(this.button_Balra_Click);
             // 
+            // button_Mentes
+            // 
+            this.button_Mentes.Location = new System.Drawing.Point(33, 302);
+            this.button_Mentes.Name = "button_Mentes";
+            this.button_Mentes.Size = new System.Drawing.Size(140, 39);
+            this.button_Mentes.TabIndex = 3;
+            this.button_Mentes.Text = "Mentés";
+            this.button_Mentes.UseVisualStyleBackColor = true;
+            this.button_Mentes.Click += new System.EventHandler(this.button_Mentes_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_Mentes);
             this.Controls.Add(this.button_Balra);
             this.Controls.Add(this.button_Jobbra);
             this.Controls.Add(this.panel_Utcakep);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Panel panel_Utcakep;
         private System.Windows.Forms.Button button_Jobbra;
         private System.Windows.Forms.Button button_Balra;
+        private System.Windows.Forms.Button button_Mentes;
     }
 }
 
