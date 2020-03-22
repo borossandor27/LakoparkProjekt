@@ -63,6 +63,16 @@ namespace LakoparkProjekt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_document_save_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions-document-save-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap balnyil {
             get {
                 object obj = ResourceManager.GetObject("balnyil", resourceCulture);
@@ -116,6 +126,16 @@ namespace LakoparkProjekt.Properties {
         internal static System.Drawing.Bitmap kereszt {
             get {
                 object obj = ResourceManager.GetObject("kereszt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Market_Analysis_icon {
+            get {
+                object obj = ResourceManager.GetObject("Market-Analysis-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

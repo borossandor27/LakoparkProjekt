@@ -74,5 +74,15 @@ namespace LakoparkProjekt
             }
             return sikeres;
         }
+
+        public double OsszesErtekesitesiOsszeg()
+        {
+            double sum = 0;
+            foreach (Lakopark item in lakoparkok)
+            {
+                sum += item.ertekesitesiOsszeg();
+            }
+            return sum;
+        }
     }
 }

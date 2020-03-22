@@ -17,6 +17,8 @@ namespace LakoparkProjekt
         readonly int buttonSize = 50;
         int aktPark = 0;
         List<Image> szintek = new List<Image>();
+        Form form_statisztika = new Form_Statisztika();
+
         public Form1()
         {
             InitializeComponent();
@@ -24,10 +26,10 @@ namespace LakoparkProjekt
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            szintek.Add(Image.FromFile(@"Kepek\kereszt.jpg"));
-            szintek.Add(Image.FromFile(@"Kepek\Haz1.jpg"));
-            szintek.Add(Image.FromFile(@"Kepek\Haz2.jpg"));
-            szintek.Add(Image.FromFile(@"Kepek\Haz3.jpg"));
+            szintek.Add(Image.FromFile(@"Kepek\kereszt.jpg"));  //-- 0 szintes
+            szintek.Add(Image.FromFile(@"Kepek\Haz1.jpg"));     //-- 1 szintes
+            szintek.Add(Image.FromFile(@"Kepek\Haz2.jpg"));     //-- 2 szintes
+            szintek.Add(Image.FromFile(@"Kepek\Haz3.jpg"));     //-- 3 szintes
             PanelUpdate();
 
         }
@@ -99,6 +101,55 @@ namespace LakoparkProjekt
             else
             {
                 MessageBox.Show("Adatok mentése nem sikerült!");
+            }
+        }
+
+        private void button_Statisztika_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter("statisztika_"+DateTime.Now.ToString("yyyyMMdd")+".txt"))
+                {
+                    sw.WriteLine("Statisztika");
+                    //-- aktualizálom az adatokat -------------
+                    foreach (Lakopark item in happyLiving.Lakoparkok)
+                    {
+                        item.beepitettsegiAranytSzamol();
+                        item.teljesBeepitettsegetVizsgal();
+                    }
+                    //-- Válaszolok a Teljesen beépített utca kérdésre -----------
+                    sw.WriteLine();
+                    bool nincsTeljesenBeepitett = true;
+                    foreach (Lakopark item in happyLiving.Lakoparkok)
+                    {
+                        if (item.VanTeljesenBeepitettUtca)
+                        {
+                            sw.WriteLine($"A {item.Nev} lakópark {item.ElsoTeljesenBeepitettUtca}. utcája teljesen beépített");
+                            nincsTeljesenBeepitett = false;
+                            break;
+                        }
+                    }
+                    if (nincsTeljesenBeepitett)
+                    {
+                        //-- Nem történt meg a Teljesen beépített kiiratása -------
+                        sw.WriteLine("A HappyLiving cég tulajdonában nincs teljesen beépített utca");
+                    }
+                    //-- Válaszolok a Beépített arány kérdésre --------------------
+                    sw.WriteLine();
+                    Lakopark legjobbanBeepitett = happyLiving.Lakoparkok.OrderBy(s => s.BeepitettsegiArany).Last();
+                    sw.WriteLine($"\nA legjobban beépített a {legjobbanBeepitett.Nev} lakópark {legjobbanBeepitett.BeepitettsegiArany * 100:N1} % beépítettséggel.");
+
+                    //-- Válaszolok a bevételre vonatkozó kérdésre -----------------
+                    sw.WriteLine();
+                    sw.WriteLine($"\nA HappyLiving cégnek az összes bevétele {happyLiving.Lakoparkok.Sum(a => a.ertekesitesiOsszeg()):N0} Ft");
+                }
+                // --- A kiirt állomány megjelenítése -------------------------------
+                form_statisztika.ShowDialog();
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("A statisztikai adatok mentése sikertelen!\n\n" + ex.Message);
+                return;
             }
         }
     }

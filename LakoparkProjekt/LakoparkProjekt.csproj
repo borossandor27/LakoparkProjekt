@@ -52,12 +52,21 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Statisztika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Statisztika.Designer.cs">
+      <DependentUpon>Form_Statisztika.cs</DependentUpon>
+    </Compile>
     <Compile Include="HappyLiving.cs" />
     <Compile Include="Lakopark.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Statisztika.resx">
+      <DependentUpon>Form_Statisztika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +123,8 @@
     <Content Include="lakoparkok.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Market-Analysis-icon.png" />
+    <None Include="Resources\Actions-document-save-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

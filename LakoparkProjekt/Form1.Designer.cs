@@ -29,23 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_Utcakep = new System.Windows.Forms.Panel();
-            this.button_Jobbra = new System.Windows.Forms.Button();
-            this.button_Balra = new System.Windows.Forms.Button();
+            this.button_Statisztika = new System.Windows.Forms.Button();
             this.button_Mentes = new System.Windows.Forms.Button();
+            this.button_Balra = new System.Windows.Forms.Button();
+            this.button_Jobbra = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::LakoparkProjekt.Properties.Resources.Van_Gogh;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 170);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel_Utcakep
             // 
@@ -54,20 +45,29 @@
             this.panel_Utcakep.Size = new System.Drawing.Size(568, 330);
             this.panel_Utcakep.TabIndex = 1;
             // 
-            // button_Jobbra
+            // button_Statisztika
             // 
-            this.button_Jobbra.BackColor = System.Drawing.Color.Transparent;
-            this.button_Jobbra.BackgroundImage = global::LakoparkProjekt.Properties.Resources.jobbnyil;
-            this.button_Jobbra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_Jobbra.FlatAppearance.BorderSize = 0;
-            this.button_Jobbra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_Jobbra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Jobbra.Location = new System.Drawing.Point(466, 375);
-            this.button_Jobbra.Name = "button_Jobbra";
-            this.button_Jobbra.Size = new System.Drawing.Size(93, 63);
-            this.button_Jobbra.TabIndex = 2;
-            this.button_Jobbra.UseVisualStyleBackColor = false;
-            this.button_Jobbra.Click += new System.EventHandler(this.button_Jobbra_Click);
+            this.button_Statisztika.Image = global::LakoparkProjekt.Properties.Resources.Market_Analysis_icon;
+            this.button_Statisztika.Location = new System.Drawing.Point(33, 310);
+            this.button_Statisztika.Name = "button_Statisztika";
+            this.button_Statisztika.Size = new System.Drawing.Size(140, 39);
+            this.button_Statisztika.TabIndex = 3;
+            this.button_Statisztika.Text = "Statisztika";
+            this.button_Statisztika.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Statisztika.UseVisualStyleBackColor = true;
+            this.button_Statisztika.Click += new System.EventHandler(this.button_Statisztika_Click);
+            // 
+            // button_Mentes
+            // 
+            this.button_Mentes.Image = global::LakoparkProjekt.Properties.Resources.Actions_document_save_icon;
+            this.button_Mentes.Location = new System.Drawing.Point(33, 242);
+            this.button_Mentes.Name = "button_Mentes";
+            this.button_Mentes.Size = new System.Drawing.Size(140, 39);
+            this.button_Mentes.TabIndex = 3;
+            this.button_Mentes.Text = "Mentés";
+            this.button_Mentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Mentes.UseVisualStyleBackColor = true;
+            this.button_Mentes.Click += new System.EventHandler(this.button_Mentes_Click);
             // 
             // button_Balra
             // 
@@ -84,21 +84,37 @@
             this.button_Balra.UseVisualStyleBackColor = false;
             this.button_Balra.Click += new System.EventHandler(this.button_Balra_Click);
             // 
-            // button_Mentes
+            // button_Jobbra
             // 
-            this.button_Mentes.Location = new System.Drawing.Point(33, 302);
-            this.button_Mentes.Name = "button_Mentes";
-            this.button_Mentes.Size = new System.Drawing.Size(140, 39);
-            this.button_Mentes.TabIndex = 3;
-            this.button_Mentes.Text = "Mentés";
-            this.button_Mentes.UseVisualStyleBackColor = true;
-            this.button_Mentes.Click += new System.EventHandler(this.button_Mentes_Click);
+            this.button_Jobbra.BackColor = System.Drawing.Color.Transparent;
+            this.button_Jobbra.BackgroundImage = global::LakoparkProjekt.Properties.Resources.jobbnyil;
+            this.button_Jobbra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Jobbra.FlatAppearance.BorderSize = 0;
+            this.button_Jobbra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_Jobbra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Jobbra.Location = new System.Drawing.Point(466, 375);
+            this.button_Jobbra.Name = "button_Jobbra";
+            this.button_Jobbra.Size = new System.Drawing.Size(93, 63);
+            this.button_Jobbra.TabIndex = 2;
+            this.button_Jobbra.UseVisualStyleBackColor = false;
+            this.button_Jobbra.Click += new System.EventHandler(this.button_Jobbra_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::LakoparkProjekt.Properties.Resources.Van_Gogh;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 170);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_Statisztika);
             this.Controls.Add(this.button_Mentes);
             this.Controls.Add(this.button_Balra);
             this.Controls.Add(this.button_Jobbra);
@@ -119,6 +135,7 @@
         private System.Windows.Forms.Button button_Jobbra;
         private System.Windows.Forms.Button button_Balra;
         private System.Windows.Forms.Button button_Mentes;
+        private System.Windows.Forms.Button button_Statisztika;
     }
 }
 
